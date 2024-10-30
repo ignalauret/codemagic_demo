@@ -13,7 +13,7 @@ workflows:
         script: |
           flutter build apk
     artifacts:
-      - build/outputs/**/*.apk
+      - build/app/outputs/flutter-apk/*.apk
     publishing:
       email:
         recipients:
