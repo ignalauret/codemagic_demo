@@ -59,8 +59,7 @@ workflows:
           flutter build apk
       - name: Generate release note with Git commit message
         script: |
-          export COMMIT_MSG=$(git log -1 --pretty=%B)
-          echo "$COMMIT_MSG" | tee release_notes.txt
+          echo "$CM_BRANCH" | tee release_notes.txt
     artifacts:
       - build/app/outputs/flutter-apk/*.apk
       - release_notes.txt
