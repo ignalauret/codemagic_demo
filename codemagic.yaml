@@ -16,6 +16,13 @@ workflows:
           find . -name "Podfile" -execdir pod install \;
       - name: Build iOS
         script: |
-          flutter build ipa --release --no-codesign --export-options-plist=/Users/builder/export_options.plist
+          flutter build ipa --release --no-codesign
     artifacts:
       - build/ios/ipa/*.ipa
+    publishing:
+      email:
+        recipients:
+          - ilauret@somniosoftware.com
+        notify:
+          success: true
+          failure: true
